@@ -15,7 +15,7 @@ export const SearchInput = () => {
   const name = searchParam.get('name');
 
   const [value, setValue] = useState(name || '');
-  const debounceValue = useDebounce<String>(value, 500);
+  const debounceValue = useDebounce<string>(value, 500);
 
   const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setValue(e.target.value);
@@ -32,7 +32,7 @@ export const SearchInput = () => {
         url: window.location.href,
         query,
       },
-      { skipEmptyString: true, skipNull: true }
+      { skipNull: true, skipEmptyString: true }
     );
 
     router.push(url);
